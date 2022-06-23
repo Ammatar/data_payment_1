@@ -16,7 +16,7 @@ export default async (req, res) => {
       });
       await res
         .status(200)
-        .json({ susses: true, RequestId: payment.id, amount: payment.amount });
+        .json({ success: true, RequestId: payment.id, amount: payment.amount });
       break;
   }
 };

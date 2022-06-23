@@ -69,6 +69,7 @@ export default function Home() {
   });
   const [disabled, setDisabled] = useState(true);
 
+  const [res, setRes] = useState({ RequestId: '', amount: '' });
   // Handlers -------------------------------------------------------------
   const handleChange = (event) => {
     setPayment({
@@ -88,6 +89,8 @@ export default function Home() {
       },
     });
     if (res.status === 200) {
+      console.log(res.data);
+      setRes(res.data);
       setPayment(paymentBlueprint());
     }
   };
@@ -101,6 +104,7 @@ export default function Home() {
       (Number(payment.year) === new Date().getFullYear() &&
         Number(payment.month) < new Date().getMonth()) ||
       payment.cvv === '000' ||
+      payment.cvv.length != 3 ||
       payment.cardnumber === '' ||
       payment.amount === 0 ||
       payment.amount === null
@@ -206,7 +210,9 @@ export default function Home() {
             inputComponent={CVVMaskCustom}
             type='password'
             required
-            error={payment.cvv === '000' ? true : false}
+            error={
+              payment.cvv === '000' || payment.cvv.length != 3 ? true : false
+            }
           />
         </FormControl>
         <FormControl variant='standard' sx={{ width: '100%' }}>
@@ -231,6 +237,11 @@ export default function Home() {
         <Button id={styles.button} onClick={handleRequest} disabled={disabled}>
           Pay
         </Button>
+        {res.RequestId !== '' ? (
+          <div>
+            returned: RequestId - {res.RequestId}, amount - {res.amount}
+          </div>
+        ) : null}
       </Box>
       {/* ----------------------------- Payment form markup ----------------------- */}
     </div>
