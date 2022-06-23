@@ -19,7 +19,7 @@
   box-shadow: 1px 1px green;
 }
 .button {
-  transition: all 4s linear;
+  transition: all 4s linear !important;
   background: linear-gradient(
       to left,
       lightgray 50%,
