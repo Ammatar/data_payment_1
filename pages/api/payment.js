@@ -14,7 +14,7 @@ export default async (req, res) => {
       const payment = await Payment.create({
         ...req.body,
       });
-      res
+      await res
         .status(200)
         .json({ susses: true, RequestId: payment.id, amount: payment.amount });
       break;
