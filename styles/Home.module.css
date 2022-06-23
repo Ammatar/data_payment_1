@@ -15,28 +15,28 @@
   );
 }
 .shadow {
-  /* border: 0.5px solid black; */
   box-shadow: 1px 1px green;
 }
 #button {
-  transition: background 4s linear !important;
-  background: linear-gradient(
-      to left,
-      lightgray 50%,
-      hsl(120, 73%, 75%, 0.5) 50%
-    )
-    right;
+  background: linear-gradient(to left, lightgray 50%, lightgreen 50%) right;
   background-size: 200%;
-  /* background-color: lightgray; */
 }
 
+@keyframes changeColor {
+  from {
+    background-position: right;
+  }
+  to {
+    background-position: left;
+  }
+}
 #button:hover {
-  /* background: linear-gradient(to right, lightgray 0%, lightgreen 100%); */
-  background-position: left;
+  animation: changeColor 2s steps(250, end) forwards;
 }
 #button:disabled {
   background-color: lightgray;
 }
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
