@@ -19,7 +19,7 @@
   box-shadow: 1px 1px green;
 }
 #button {
-  transition: all 4s linear !important;
+  transition: background 4s linear !important;
   background: linear-gradient(
       to left,
       lightgray 50%,
@@ -29,9 +29,13 @@
   background-size: 200%;
   /* background-color: lightgray; */
 }
+
 #button:hover {
   /* background: linear-gradient(to right, lightgray 0%, lightgreen 100%); */
   background-position: left;
+}
+#button:disabled {
+  background-color: lightgray;
 }
 @media (max-width: 600px) {
   .grid {
