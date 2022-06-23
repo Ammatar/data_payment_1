@@ -228,11 +228,7 @@ export default function Home() {
             error={payment.amount === 0 ? true : false}
           />
         </FormControl>
-        <Button
-          className={styles.button}
-          onClick={handleRequest}
-          disabled={disabled}
-        >
+        <Button id={styles.button} onClick={handleRequest} disabled={disabled}>
           Pay
         </Button>
       </Box>

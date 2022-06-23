@@ -18,7 +18,7 @@
   /* border: 0.5px solid black; */
   box-shadow: 1px 1px green;
 }
-.button {
+#button {
   transition: all 4s linear !important;
   background: linear-gradient(
       to left,
@@ -29,7 +29,7 @@
   background-size: 200%;
   /* background-color: lightgray; */
 }
-.button:hover {
+#button:hover {
   /* background: linear-gradient(to right, lightgray 0%, lightgreen 100%); */
   background-position: left;
 }
