@@ -106,7 +106,7 @@ export default function Home() {
       payment.cvv === '000' ||
       payment.cvv.length != 3 ||
       payment.cardnumber === '' ||
-      payment.amount === 0 ||
+      payment.amount <= 0 ||
       payment.amount === null
     ) {
       setDisabled(true);
